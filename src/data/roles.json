@@ -1,0 +1,19 @@
+[
+  {
+    "role": "user",
+    "menu": [
+      { "label": "about", "slug": "/about" },
+      { "label": "home", "slug": "/" }
+    ],
+    "routes": ["/", "/about"]
+  },
+  {
+    "role": "admin",
+    "menu": [
+      { "label": "about", "slug": "/about" },
+      { "label": "home", "slug": "/" },
+      { "label": "go to admin page", "slug": "/admin" }
+    ],
+    "routes": ["/", "/about", "/admin"]
+  }
+]
