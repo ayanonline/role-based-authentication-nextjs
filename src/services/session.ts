@@ -1,15 +1,5 @@
 import Cookies from "js-cookie";
 
-// Store token into localStorage
-export const saveSession = (accessToken: any) => {
-  Cookies.set("access_token", JSON.stringify(accessToken));
-};
-
-// Delete token from localStorage
-export const deleteSession = () => {
-  Cookies.remove("access_token");
-};
-
 // Get user details from session_token
 export const getTokenDetails = (token: string) => {
   if (token) {
@@ -28,6 +18,18 @@ export const getTokenDetails = (token: string) => {
   } else {
     return false;
   }
+};
+
+// Store token into localStorage
+export const saveSession = (accessToken: any) => {
+  Cookies.set("access_token", accessToken, {
+    expires: 60,
+  });
+};
+
+// Delete token from localStorage
+export const deleteSession = () => {
+  Cookies.remove("access_token");
 };
 
 export const getUserDetails = () =>

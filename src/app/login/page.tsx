@@ -2,7 +2,7 @@
 
 import { useAuthStore } from "@/providers/auth-store-provider";
 import { signin } from "@/services/dispatch";
-import { getUserDetails, saveSession, setItem } from "@/services/session";
+import { getUserDetails, saveSession } from "@/services/session";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
@@ -31,7 +31,6 @@ export default function LoginPage() {
     setLoading(true);
     signin(formdata)
       .then((res) => {
-        console.log({ res });
         saveSession(res.ACCESS_TOKEN);
         setIsLoggedIn(true);
         setUser(getUserDetails());
@@ -40,7 +39,6 @@ export default function LoginPage() {
         router.push("/");
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
       });
   };

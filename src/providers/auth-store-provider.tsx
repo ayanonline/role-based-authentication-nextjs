@@ -14,6 +14,7 @@ import {
   deleteSession,
   getUserDetails,
 } from "@/services/session";
+import Cookies from "js-cookie";
 
 export const AuthStoreContext = createContext<StoreApi<AuthStore> | null>(null);
 

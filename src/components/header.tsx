@@ -15,7 +15,6 @@ export default function Header() {
     setIsLoggedIn(false);
     setUser(null);
   };
-  // console.log({ isLoggedIn, user, loading });
 
   const [userRolePermission] = rolesData?.filter((item) =>
     user?.ROLE.ROLES?.includes(item.role)
@@ -26,10 +25,10 @@ export default function Header() {
       <h1 className="text-4xl font-bold">Logo</h1>
 
       <nav>
-        <ul className="flex items-center gap-6 text-xl">
+        <ul className="flex items-center gap-6 text-lg font-semibold">
           {userRolePermission?.menu?.map((menu) => {
             return (
-              <li>
+              <li className="uppercase">
                 <Link href={menu.slug}>{menu.label}</Link>
               </li>
             );
